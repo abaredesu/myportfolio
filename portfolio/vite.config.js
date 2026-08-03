@@ -8,10 +8,11 @@ export default defineConfig({
   build: {
     // Use esbuild instead of lightningcss
     minify: 'esbuild',
+     sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          vendor: ['react', 'react-dom','framer-motion'],
         },
       },
     },
