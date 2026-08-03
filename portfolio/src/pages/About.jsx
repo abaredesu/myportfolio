@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Footer from '../components/Footer';
+import Footer from '../components/footer.jsx';
 import Sidenavbar from '../components/sidenavbar.jsx'
 import profileImage from '../assets/images/userabare2.jpeg'
 import certImage from '../assets/images/cert1.jpeg'

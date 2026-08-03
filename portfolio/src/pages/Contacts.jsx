@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
-import Footer from '../components/Footer';
+import Footer from '../components/footer.jsx';
 import Sidenavbar from '../components/sidenavbar.jsx'
 import contactsImage from '../assets/images/contacts1.jpeg'
 
