@@ -761,6 +761,75 @@ function GalleryModal({ images, currentIndex, onClose, onNavigate }) {
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
     const [isSwiping, setIsSwiping] = useState(false);
+    
+    // Image loading state
+    const [loadedImages, setLoadedImages] = useState({});
+    const [currentImageLoaded, setCurrentImageLoaded] = useState(false);
+
+    // Preload images function
+    const preloadImage = (src) => {
+        if (!loadedImages[src]) {
+            const img = new Image();
+            img.onload = () => {
+                setLoadedImages(prev => ({ ...prev, [src]: true }));
+            };
+            img.src = src;
+        }
+    };
+
+    // Preload current and adjacent images
+    useEffect(() => {
+        // Reset current image loaded state
+        setCurrentImageLoaded(false);
+        
+        // Preload current image
+        preloadImage(images[currentIndex]);
+        
+        // Preload next and previous images
+        if (currentIndex > 0) {
+            preloadImage(images[currentIndex - 1]);
+        }
+        if (currentIndex < images.length - 1) {
+            preloadImage(images[currentIndex + 1]);
+        }
+        
+        // Preload images in viewport for dots
+        const startPreload = Math.max(0, currentIndex - 5);
+        const endPreload = Math.min(images.length, currentIndex + 6);
+        for (let i = startPreload; i < endPreload; i++) {
+            if (i !== currentIndex) {
+                preloadImage(images[i]);
+            }
+        }
+    }, [currentIndex, images]);
+
+    // Handle keyboard events
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                onNavigate(-1);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                onNavigate(1);
+            } else if (e.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onNavigate, onClose]);
+
+    // Detect touch device
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        const checkTouch = () => {
+            setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        };
+        checkTouch();
+    }, []);
 
     const handleTouchStart = (e) => {
         setTouchStart(e.targetTouches[0].clientX);
@@ -799,34 +868,6 @@ function GalleryModal({ images, currentIndex, onClose, onNavigate }) {
         setTouchEnd(null);
         setIsSwiping(false);
     };
-
-    // Handle keyboard events
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                onNavigate(-1);
-            } else if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                onNavigate(1);
-            } else if (e.key === 'Escape') {
-                onClose();
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [onNavigate, onClose]);
-
-    // Detect touch device
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-    useEffect(() => {
-        const checkTouch = () => {
-            setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-        };
-        checkTouch();
-    }, []);
 
     return (
         <AnimatePresence>
@@ -897,11 +938,22 @@ function GalleryModal({ images, currentIndex, onClose, onNavigate }) {
                                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
                                 className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-black/20"
                             >
+                                {/* Loading state */}
+                                {!currentImageLoaded && (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-12 h-12 border-3 border-white/20 border-t-white/60 rounded-full animate-spin"></div>
+                                    </div>
+                                )}
+                                
                                 <img
                                     src={images[currentIndex]}
                                     alt={`Screenshot ${currentIndex + 1}`}
-                                    className="w-full h-auto max-h-[65vh] sm:max-h-[68vh] md:max-h-[70vh] lg:max-h-[72vh] xl:max-h-[75vh] object-contain select-none"
+                                    className={`w-full h-auto max-h-[65vh] sm:max-h-[68vh] md:max-h-[70vh] lg:max-h-[72vh] xl:max-h-[75vh] object-contain select-none transition-opacity duration-300 ${
+                                        currentImageLoaded ? 'opacity-100' : 'opacity-0'
+                                    }`}
                                     draggable="false"
+                                    onLoad={() => setCurrentImageLoaded(true)}
+                                    onError={() => setCurrentImageLoaded(true)} // Show image even if it fails to load
                                 />
 
                                 {/* Swipe hint overlay for touch devices - subtle */}
