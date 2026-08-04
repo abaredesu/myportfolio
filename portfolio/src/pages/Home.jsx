@@ -190,6 +190,7 @@ function HomeIcon({ className }) {
 }
 
 function Home() {
+     const history = useHistory();
     const [isClicked, setIsClicked] = useState(false)
     const displayedImage = isClicked ? homepicHover : homepic
 
