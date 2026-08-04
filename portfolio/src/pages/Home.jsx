@@ -250,26 +250,26 @@ function Home() {
                                     </p>
 
                                     {/* Download CV Button - with pulse and hover effects */}
-                                   <div className="animate-fade-up mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10" style={getDelayStyle(2.5)}>
-    <a
-        href={cvPDF}
-        download="ABARE-MARK-JUSTIN-V-CV.pdf"
-        className="group relative inline-flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 px-3 xs:px-4 sm:px-4.5 md:px-5 py-1.5 xs:py-2 sm:py-2.5 text-[0.6rem] xs:text-[0.65rem] sm:text-[0.7rem] md:text-[0.75rem] lg:text-xs xl:text-sm font-medium text-white/70 hover:text-white border border-white/15 hover:border-white/30 rounded-lg transition-all duration-300 hover:bg-white/5 overflow-hidden"
-    >
-        <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent"></span>
+                                    <div className="animate-fade-up mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10" style={getDelayStyle(2.5)}>
+                                        <a
+                                            href={cvPDF}
+                                            download="ABARE-MARK-JUSTIN-V-CV.pdf"
+                                            className="group relative inline-flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 px-3 xs:px-4 sm:px-4.5 md:px-5 py-1.5 xs:py-2 sm:py-2.5 text-[0.6rem] xs:text-[0.65rem] sm:text-[0.7rem] md:text-[0.75rem] lg:text-xs xl:text-sm font-medium text-white/70 hover:text-white border border-white/15 hover:border-white/30 rounded-lg transition-all duration-300 hover:bg-white/5 overflow-hidden"
+                                        >
+                                            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent"></span>
 
-        <svg className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-white/50 group-hover:text-white/80 transition-colors duration-300 group-hover:animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-        <span>Download CV</span>
-        <svg className="w-2.5 xs:w-3 sm:w-3.5 h-2.5 xs:h-3 sm:h-3.5 text-white/30 group-hover:text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-[-10deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-        </svg>
-    </a>
-</div>
+                                            <svg className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-white/50 group-hover:text-white/80 transition-colors duration-300 group-hover:animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                <polyline points="7 10 12 15 17 10" />
+                                                <line x1="12" y1="15" x2="12" y2="3" />
+                                            </svg>
+                                            <span>Download CV</span>
+                                            <svg className="w-2.5 xs:w-3 sm:w-3.5 h-2.5 xs:h-3 sm:h-3.5 text-white/30 group-hover:text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-[-10deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M5 12h14" />
+                                                <path d="m12 5 7 7-7 7" />
+                                            </svg>
+                                        </a>
+                                    </div>
 
                                 </div>
 
