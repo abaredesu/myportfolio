@@ -519,8 +519,181 @@ function Home() {
                                 title="Projects"
                                 subtitle="Showcasing skills through real-world web solutions."
                             >
+                                {/* Mobile horizontal scroll container */}
+                                <div className="sm:hidden overflow-x-auto overflow-y-visible pb-3 px-1 xs:px-2 -mx-1 xs:-mx-2 scrollbar-hide">
+                                    <div className="flex gap-3 xs:gap-4 w-max px-1 xs:px-2">
+                                        {projects.map((project, index) => (
+                                            <motion.article
+                                                key={project.title}
+                                                initial={{ opacity: 0, y: 15 }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    transition: {
+                                                        duration: 0.3,
+                                                        delay: Math.min(index * 0.03, 0.15),
+                                                        ease: [0.25, 0.1, 0.25, 1.0],
+                                                    }
+                                                }}
+                                                viewport={{
+                                                    once: true,
+                                                    amount: 0.05,
+                                                    margin: "-15px"
+                                                }}
+                                                whileHover={{
+                                                    scale: 1.02,
+                                                    transition: { duration: 0.15, ease: [0.25, 0.1, 0.25, 1.0] }
+                                                }}
+                                                className="group w-[200px] xs:w-[220px] flex-shrink-0 rounded-lg xs:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl transition-all duration-200 hover:shadow-2xl hover:bg-white/10 cursor-pointer"
+                                                onClick={() => navigate('/projects')}
+                                            >
+                                                <div className="relative overflow-hidden rounded-lg xs:rounded-xl aspect-[4/5]">
+                                                    {/* Image with optimized reveal */}
+                                                    <motion.div
+                                                        initial={{ scale: 1.03, opacity: 0.9 }}
+                                                        whileInView={{
+                                                            scale: 1,
+                                                            opacity: 1,
+                                                            transition: {
+                                                                duration: 0.3,
+                                                                delay: Math.min(index * 0.03 + 0.03, 0.18),
+                                                                ease: [0.25, 0.1, 0.25, 1.0],
+                                                            }
+                                                        }}
+                                                        viewport={{ once: true, amount: 0.05 }}
+                                                        className="absolute inset-0 w-full h-full"
+                                                    >
+                                                        <img
+                                                            src={project.image}
+                                                            alt={project.title}
+                                                            className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-105 will-change-transform"
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                        />
+                                                    </motion.div>
+
+                                                    {/* Gradient overlay */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/65 to-transparent transition-opacity duration-300 group-hover:from-black/90 group-hover:via-black/75" />
+
+                                                    {/* Decorative float elements */}
+                                                    <div className="absolute inset-0 opacity-5 xs:opacity-10">
+                                                        <div className="absolute top-0 right-0 w-16 xs:w-20 h-16 xs:h-20 bg-white/10 rounded-full blur-2xl transform translate-x-4 xs:translate-x-6 -translate-y-4 xs:-translate-y-6" />
+                                                        <div className="absolute bottom-0 left-0 w-20 xs:w-24 h-20 xs:h-24 bg-white/5 rounded-full blur-3xl transform -translate-x-4 xs:-translate-x-6 translate-y-4 xs:translate-y-6" />
+                                                    </div>
+
+                                                    {/* Content with staggered reveals */}
+                                                    <div className="absolute inset-x-0 bottom-0 p-2.5 xs:p-3">
+                                                        <div className="space-y-0.5 xs:space-y-1">
+                                                            {/* Category badge */}
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: 6 }}
+                                                                whileInView={{
+                                                                    opacity: 1,
+                                                                    y: 0,
+                                                                    transition: {
+                                                                        duration: 0.25,
+                                                                        delay: Math.min(index * 0.03 + 0.06, 0.2),
+                                                                        ease: [0.25, 0.1, 0.25, 1.0],
+                                                                    }
+                                                                }}
+                                                                viewport={{ once: true, amount: 0.05 }}
+                                                                className="inline-flex items-center gap-1 xs:gap-1.5 px-1.5 xs:px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/20"
+                                                            >
+                                                                <p className="text-[0.3rem] xs:text-[0.35rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.18em] text-white/80">
+                                                                    {project.category}
+                                                                </p>
+                                                            </motion.div>
+
+                                                            {/* Title */}
+                                                            <motion.h3
+                                                                initial={{ opacity: 0, y: 6 }}
+                                                                whileInView={{
+                                                                    opacity: 1,
+                                                                    y: 0,
+                                                                    transition: {
+                                                                        duration: 0.25,
+                                                                        delay: Math.min(index * 0.03 + 0.09, 0.23),
+                                                                        ease: [0.25, 0.1, 0.25, 1.0],
+                                                                    }
+                                                                }}
+                                                                viewport={{ once: true, amount: 0.05 }}
+                                                                className="font-light tracking-tight text-white leading-tight text-sm xs:text-base transition-all duration-300 group-hover:tracking-wide"
+                                                            >
+                                                                {project.title}
+                                                            </motion.h3>
+
+                                                            {/* Description */}
+                                                            <motion.p
+                                                                initial={{ opacity: 0, y: 6 }}
+                                                                whileInView={{
+                                                                    opacity: 1,
+                                                                    y: 0,
+                                                                    transition: {
+                                                                        duration: 0.25,
+                                                                        delay: Math.min(index * 0.03 + 0.12, 0.26),
+                                                                        ease: [0.25, 0.1, 0.25, 1.0],
+                                                                    }
+                                                                }}
+                                                                viewport={{ once: true, amount: 0.05 }}
+                                                                className="text-[0.5rem] xs:text-[0.55rem] text-white/60 font-light leading-relaxed max-w-[90%] xs:max-w-full line-clamp-2 transition-colors duration-300 group-hover:text-white/70"
+                                                            >
+                                                                {project.summary}
+                                                            </motion.p>
+
+                                                            {/* View Project */}
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: 6 }}
+                                                                whileInView={{
+                                                                    opacity: 1,
+                                                                    y: 0,
+                                                                    transition: {
+                                                                        duration: 0.25,
+                                                                        delay: Math.min(index * 0.03 + 0.15, 0.29),
+                                                                        ease: [0.25, 0.1, 0.25, 1.0],
+                                                                    }
+                                                                }}
+                                                                viewport={{ once: true, amount: 0.05 }}
+                                                                className="pt-1 xs:pt-1.5 flex items-center gap-1 xs:gap-1.5 text-white/40 transition-colors duration-300 group-hover:text-white/80"
+                                                            >
+                                                                <span className="text-[0.35rem] xs:text-[0.4rem] font-medium tracking-wider uppercase transition-all duration-300 group-hover:tracking-[0.12em]">
+                                                                    View in Projects
+                                                                </span>
+                                                                <div className="w-4 xs:w-4.5 h-4 xs:h-4.5 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/5">
+                                                                    <svg className="w-2 xs:w-2 h-2 xs:h-2 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                                    </svg>
+                                                                </div>
+                                                            </motion.div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Hover overlay */}
+                                                    <div className="absolute inset-0 bg-white/5 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:bg-white/[0.05]" />
+
+                                                    {/* Corner decorative */}
+                                                    <div className="absolute top-1 xs:top-1.5 right-1 xs:right-1.5 w-4 xs:w-4.5 h-4 xs:h-4.5 border border-white/10 rounded-full backdrop-blur-sm bg-white/5 flex items-center justify-center transition-all duration-400 opacity-0 group-hover:opacity-100 group-hover:rotate-12 group-hover:border-white/20 group-hover:bg-white/10">
+                                                        <svg className="w-1.5 xs:w-1.5 text-white/40 transition-all duration-300 group-hover:text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                                        </svg>
+                                                    </div>
+
+                                                    {/* Accent lines */}
+                                                    <div className="absolute bottom-0 left-0 w-2rem h-0.5 bg-gradient-to-r from-white/30 to-transparent transition-all duration-400 group-hover:w-8 xs:group-hover:w-10" />
+                                                    <div className="absolute top-0 right-0 w-1.5rem h-0.5 bg-gradient-to-l from-white/20 to-transparent transition-all duration-400 group-hover:w-6 xs:group-hover:w-8" />
+                                                </div>
+
+                                                {/* Click hint */}
+                                                <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 text-[0.25rem] xs:text-[0.3rem] font-light text-white/10 group-hover:text-white/30 transition-colors duration-300 opacity-0 group-hover:opacity-100">
+                                                    Click to view all projects
+                                                </div>
+                                            </motion.article>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Desktop/Tablet grid layout */}
                                 <motion.div
-                                    className="columns-1 xs:columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 font-['Montserrat',sans-serif]"
+                                    className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 p-1 xs:p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 font-['Montserrat',sans-serif]"
                                 >
                                     {projects.map((project, index) => (
                                         <motion.article
@@ -544,10 +717,7 @@ function Home() {
                                                 scale: 1.02,
                                                 transition: { duration: 0.15, ease: [0.25, 0.1, 0.25, 1.0] }
                                             }}
-                                            className={`group break-inside-avoid rounded-lg xs:rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl transition-all duration-200 hover:shadow-2xl hover:bg-white/10 cursor-pointer ${index % 3 === 0 ? 'mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8' :
-                                                index % 3 === 1 ? 'mb-2 xs:mb-2.5 sm:mb-3 md:mb-3.5 lg:mb-4' :
-                                                    'mb-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12'
-                                                }`}
+                                            className="group break-inside-avoid rounded-lg xs:rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl transition-all duration-200 hover:shadow-2xl hover:bg-white/10 cursor-pointer"
                                             onClick={() => navigate('/projects')}
                                         >
                                             <div className="relative overflow-hidden rounded-lg xs:rounded-xl sm:rounded-2xl aspect-[4/5]">
@@ -585,8 +755,8 @@ function Home() {
                                                 </div>
 
                                                 {/* Content with staggered reveals */}
-                                                <div className="absolute inset-x-0 bottom-0 p-3 xs:p-3.5 sm:p-4 md:p-5 lg:p-6">
-                                                    <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                                                <div className="absolute inset-x-0 bottom-0 p-2.5 xs:p-3 sm:p-4 md:p-5 lg:p-6">
+                                                    <div className="space-y-0.5 xs:space-y-1 sm:space-y-2">
                                                         {/* Category badge */}
                                                         <motion.div
                                                             initial={{ opacity: 0, y: 6 }}
@@ -602,7 +772,7 @@ function Home() {
                                                             viewport={{ once: true, amount: 0.05 }}
                                                             className="inline-flex items-center gap-1 xs:gap-1.5 sm:gap-2 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-0.5 sm:py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/20"
                                                         >
-                                                            <p className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] lg:text-[0.55rem] font-medium uppercase tracking-[0.2em] xs:tracking-[0.22em] sm:tracking-[0.25em] md:tracking-[0.28em] lg:tracking-[0.3em] text-white/80">
+                                                            <p className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] xl:text-[0.55rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.18em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.28em] xl:tracking-[0.3em] text-white/80">
                                                                 {project.category}
                                                             </p>
                                                         </motion.div>
@@ -620,12 +790,12 @@ function Home() {
                                                                 }
                                                             }}
                                                             viewport={{ once: true, amount: 0.05 }}
-                                                            className="font-light tracking-tight text-white leading-tight text-base xs:text-lg sm:text-xl md:text-2xl transition-all duration-300 group-hover:tracking-wide"
+                                                            className="font-light tracking-tight text-white leading-tight text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl transition-all duration-300 group-hover:tracking-wide"
                                                         >
                                                             {project.title}
                                                         </motion.h3>
 
-                                                        {/* Description - Removed placeholder text */}
+                                                        {/* Description */}
                                                         <motion.p
                                                             initial={{ opacity: 0, y: 6 }}
                                                             whileInView={{
@@ -638,12 +808,12 @@ function Home() {
                                                                 }
                                                             }}
                                                             viewport={{ once: true, amount: 0.05 }}
-                                                            className="text-[0.6rem] xs:text-[0.65rem] sm:text-xs md:text-sm text-white/60 font-light leading-relaxed max-w-[90%] xs:max-w-full line-clamp-2 transition-colors duration-300 group-hover:text-white/70"
+                                                            className="text-[0.5rem] xs:text-[0.55rem] sm:text-[0.6rem] md:text-xs lg:text-sm text-white/60 font-light leading-relaxed max-w-[90%] xs:max-w-full line-clamp-2 transition-colors duration-300 group-hover:text-white/70"
                                                         >
                                                             {project.summary}
                                                         </motion.p>
 
-                                                        {/* View Project - Changed to "View in Projects" */}
+                                                        {/* View Project */}
                                                         <motion.div
                                                             initial={{ opacity: 0, y: 6 }}
                                                             whileInView={{
@@ -656,13 +826,13 @@ function Home() {
                                                                 }
                                                             }}
                                                             viewport={{ once: true, amount: 0.05 }}
-                                                            className="pt-1.5 xs:pt-2 sm:pt-2.5 md:pt-3 flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3 text-white/40 transition-colors duration-300 group-hover:text-white/80"
+                                                            className="pt-1 xs:pt-1.5 sm:pt-2 md:pt-2.5 lg:pt-3 flex items-center gap-1 xs:gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 text-white/40 transition-colors duration-300 group-hover:text-white/80"
                                                         >
-                                                            <span className="text-[0.4rem] xs:text-[0.45rem] sm:text-[0.5rem] md:text-[0.55rem] lg:text-[0.6rem] font-medium tracking-wider uppercase transition-all duration-300 group-hover:tracking-[0.12em]">
+                                                            <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] lg:text-[0.55rem] xl:text-[0.6rem] font-medium tracking-wider uppercase transition-all duration-300 group-hover:tracking-[0.12em]">
                                                                 View in Projects
                                                             </span>
-                                                            <div className="w-5 xs:w-5.5 sm:w-6 md:w-7 lg:w-8 h-5 xs:h-5.5 sm:h-6 md:h-7 lg:h-8 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/5">
-                                                                <svg className="w-2.5 xs:w-2.5 sm:w-3 md:w-3.5 h-2.5 xs:h-2.5 sm:h-3 md:h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                                            <div className="w-4 xs:w-4.5 sm:w-5 md:w-6 lg:w-7 xl:w-8 h-4 xs:h-4.5 sm:h-5 md:h-6 lg:h-7 xl:h-8 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/5">
+                                                                <svg className="w-2 xs:w-2 sm:w-2.5 md:w-3 lg:w-3.5 h-2 xs:h-2 sm:h-2.5 md:h-3 lg:h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                                 </svg>
                                                             </div>
@@ -674,26 +844,25 @@ function Home() {
                                                 <div className="absolute inset-0 bg-white/5 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:bg-white/[0.05]" />
 
                                                 {/* Corner decorative */}
-                                                <div className="absolute top-1.5 xs:top-2 sm:top-2.5 md:top-3 lg:top-4 right-1.5 xs:right-2 sm:right-2.5 md:right-3 lg:right-4 w-5 xs:w-5.5 sm:w-6 md:w-7 lg:w-8 xl:w-9 h-5 xs:h-5.5 sm:h-6 md:h-7 lg:h-8 xl:h-9 border border-white/10 rounded-full backdrop-blur-sm bg-white/5 flex items-center justify-center transition-all duration-400 opacity-0 group-hover:opacity-100 group-hover:rotate-12 group-hover:border-white/20 group-hover:bg-white/10">
-                                                    <svg className="w-2 xs:w-2 sm:w-2.5 md:w-3 text-white/40 transition-all duration-300 group-hover:text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                                <div className="absolute top-1 xs:top-1.5 sm:top-2 md:top-2.5 lg:top-3 xl:top-4 right-1 xs:right-1.5 sm:right-2 md:right-2.5 lg:right-3 xl:right-4 w-4 xs:w-4.5 sm:w-5 md:w-6 lg:w-7 xl:w-8 2xl:w-9 h-4 xs:h-4.5 sm:h-5 md:h-6 lg:h-7 xl:h-8 2xl:h-9 border border-white/10 rounded-full backdrop-blur-sm bg-white/5 flex items-center justify-center transition-all duration-400 opacity-0 group-hover:opacity-100 group-hover:rotate-12 group-hover:border-white/20 group-hover:bg-white/10">
+                                                    <svg className="w-1.5 xs:w-1.5 sm:w-2 md:w-2.5 lg:w-3 text-white/40 transition-all duration-300 group-hover:text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                                                     </svg>
                                                 </div>
 
                                                 {/* Accent lines */}
-                                                <div className="absolute bottom-0 left-0 w-2rem h-0.5 bg-gradient-to-r from-white/30 to-transparent transition-all duration-400 group-hover:w-12 xs:group-hover:w-14 sm:group-hover:w-16 md:group-hover:w-18 lg:group-hover:w-20 xl:group-hover:w-24" />
-                                                <div className="absolute top-0 right-0 w-1.5rem h-0.5 bg-gradient-to-l from-white/20 to-transparent transition-all duration-400 group-hover:w-8 xs:group-hover:w-10 sm:group-hover:w-12 md:group-hover:w-14 lg:group-hover:w-16" />
+                                                <div className="absolute bottom-0 left-0 w-2rem h-0.5 bg-gradient-to-r from-white/30 to-transparent transition-all duration-400 group-hover:w-8 xs:group-hover:w-10 sm:group-hover:w-12 md:group-hover:w-14 lg:group-hover:w-16 xl:group-hover:w-18 2xl:group-hover:w-20" />
+                                                <div className="absolute top-0 right-0 w-1.5rem h-0.5 bg-gradient-to-l from-white/20 to-transparent transition-all duration-400 group-hover:w-6 xs:group-hover:w-8 sm:group-hover:w-10 md:group-hover:w-12 lg:group-hover:w-14 xl:group-hover:w-16" />
                                             </div>
 
-                                            {/* Click hint - subtle */}
-                                            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[0.35rem] xs:text-[0.4rem] font-light text-white/10 group-hover:text-white/30 transition-colors duration-300 opacity-0 group-hover:opacity-100">
+                                            {/* Click hint */}
+                                            <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 text-[0.25rem] xs:text-[0.3rem] sm:text-[0.35rem] font-light text-white/10 group-hover:text-white/30 transition-colors duration-300 opacity-0 group-hover:opacity-100">
                                                 Click to view all projects
                                             </div>
                                         </motion.article>
                                     ))}
                                 </motion.div>
                             </FlowSection>
-
                             {/* EXPERIENCE SECTION */}
                             <FlowSection
                                 id="experience"
