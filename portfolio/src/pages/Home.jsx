@@ -1,6 +1,7 @@
 // Home.jsx
 import { useState, useCallback, useMemo } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/footer.jsx';
 import Sidenavbar from '../components/sidenavbar.jsx'
 import homepic from '../assets/images/homepic.jpeg'
@@ -13,6 +14,7 @@ import fireQuakeImage from '../assets/images/fqe-logo.jpeg'
 import nestCafeImage from '../assets/images/p2.jpeg'
 import bulsuSnapImage from '../assets/images/p4.png'
 
+const navigate = useNavigate();
 const fadeInUpVariants = {
     hidden: {
         opacity: 0,
