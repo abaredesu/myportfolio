@@ -11,12 +11,12 @@ const defaultNavItems = [
 ]
 
 const socialItems = [
-    { label: 'Google', href: '#', icon: GoogleIcon },
-    { label: 'GitHub', href: '#', icon: GithubIcon },
-    { label: 'LinkedIn', href: '#', icon: LinkedInIcon },
-    { label: 'Facebook', href: '#', icon: FacebookIcon },
+    { label: 'Google', href: 'mailto:abaremj078@gmail.com', icon: GoogleIcon },
+    { label: 'GitHub', href: 'https://github.com/abaredesu', icon: GithubIcon },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mark-justin-abare-2a5930397/', icon: LinkedInIcon },
+    { label: 'Facebook', href: 'https://www.facebook.com/share/1HkWcFZbpq/', icon: FacebookIcon },
     { label: 'Instagram', href: 'https://www.instagram.com/_juicetinn?fbclid=IwY2xjawTed3JleHRuA2FlbQIxMABicmlkETE3MktpTlJtR0lPd1dGMDRtc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmwTbs0gosiDJ53VfBG1EJo3wd9pZPGeTyrCtKfv_mkS-mNd6RqfgokzoPAJ_aem_CA730AFBfFFx_rPSYqow9A', icon: InstagramIcon },
-    { label: 'Discord', href: '#', icon: DiscordIcon },
+    { label: 'Discord', href: 'https://discord.com/@totoreii', icon: DiscordIcon },
 ]
 
 const sidebarDelay = (index, base = 0.08, step = 0.07) => ({
