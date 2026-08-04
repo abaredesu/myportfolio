@@ -15,7 +15,7 @@ const socialItems = [
     { label: 'GitHub', href: '#', icon: GithubIcon },
     { label: 'LinkedIn', href: '#', icon: LinkedInIcon },
     { label: 'Facebook', href: '#', icon: FacebookIcon },
-    { label: 'Instagram', href: '#', icon: InstagramIcon },
+    { label: 'Instagram', href: 'https://www.instagram.com/_juicetinn?fbclid=IwY2xjawTed3JleHRuA2FlbQIxMABicmlkETE3MktpTlJtR0lPd1dGMDRtc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmwTbs0gosiDJ53VfBG1EJo3wd9pZPGeTyrCtKfv_mkS-mNd6RqfgokzoPAJ_aem_CA730AFBfFFx_rPSYqow9A', icon: InstagramIcon },
     { label: 'Discord', href: '#', icon: DiscordIcon },
 ]
 
