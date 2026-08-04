@@ -251,7 +251,7 @@ function Home() {
                                     {/* Download CV Button - with pulse and hover effects */}
                                     <div className="animate-fade-up mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10" style={getDelayStyle(2.5)}>
                                         <a
-                                            href="/cv.pdf"
+                                            href="/ABARE-MARK-JUSTIN-V-CV.pdf"
                                             download
                                             className="group relative inline-flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 px-3 xs:px-4 sm:px-4.5 md:px-5 py-1.5 xs:py-2 sm:py-2.5 text-[0.6rem] xs:text-[0.65rem] sm:text-[0.7rem] md:text-[0.75rem] lg:text-xs xl:text-sm font-medium text-white/70 hover:text-white border border-white/15 hover:border-white/30 rounded-lg transition-all duration-300 hover:bg-white/5 overflow-hidden"
                                         >
