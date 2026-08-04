@@ -130,8 +130,8 @@ const projectCards = [
             fireQuakeImage16, fireQuakeImage17, fireQuakeImage18, fireQuakeImage19, fireQuakeImage20,
             fireQuakeImage21, fireQuakeImage22, fireQuakeImage23, fireQuakeImage24
         ],
-        githubLink: 'https://github.com/yourusername/firequakeescape',
-        liveLink: 'https://firequakeescape.com'
+       githubLink: '#',
+        liveLink: '#'
     },
     {
         title: 'The Nest Cafe',
@@ -170,8 +170,8 @@ const projectCards = [
             nestScreenshot16, nestScreenshot17, nestScreenshot18, nestScreenshot19, nestScreenshot20,
             nestScreenshot21
         ],
-        githubLink: 'https://github.com/yourusername/thenestcafe',
-        liveLink: 'https://thenestcafe.com'
+        githubLink: '#',
+        liveLink: '#'
     },
     {
         title: 'Pasta Nest',
@@ -207,8 +207,8 @@ const projectCards = [
             pastaNestImage6, pastaNestImage7, pastaNestImage8, pastaNestImage9, pastaNestImage10,
             pastaNestImage11, pastaNestImage12
         ],
-        githubLink: 'https://github.com/yourusername/pastanest',
-        liveLink: 'https://pastanest.com'
+        githubLink: '#',
+        liveLink: '#'
     },
     {
         title: 'BulsuSnap',
@@ -247,8 +247,8 @@ const projectCards = [
             bulsuSnapImage9, bulsuSnapImage10, bulsuSnapImage11, bulsuSnapImage12,
             bulsuSnapImage13, bulsuSnapImage14
         ],
-        githubLink: 'https://github.com/yourusername/bulsusnap',
-        liveLink: 'https://bulsusnap.com'
+        githubLink: '#',
+        liveLink: '#'
     },
 ]
 
@@ -658,6 +658,7 @@ function Modal({ project, onClose, onOpenGallery }) {
                                     <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                                         <a
                                             href={project.githubLink}
+                                            onClick={(e) => e.preventDefault()}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex-1 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 text-[11px] sm:text-xs md:text-sm font-light text-white/40 border border-white/10 rounded-xl hover:bg-white/5 hover:text-white/70 hover:border-white/20 transition-all duration-300"
@@ -669,6 +670,7 @@ function Modal({ project, onClose, onOpenGallery }) {
                                         </a>
                                         <a
                                             href={project.liveLink}
+                                            onClick={(e) => e.preventDefault()}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex-1 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 text-[11px] sm:text-xs md:text-sm font-light text-white/70 bg-white/5 border border-white/10 rounded-xl hover:bg-white/15 hover:text-white hover:border-white/20 transition-all duration-300"
