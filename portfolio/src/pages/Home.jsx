@@ -193,7 +193,7 @@ function Home() {
     const navigate = useNavigate();
     const [isClicked, setIsClicked] = useState(false)
     const displayedImage = isClicked ? homepicHover : homepic
-    
+
     const handleImageClick = useCallback(() => {
         setIsClicked(prev => !prev)
     }, [])
@@ -207,24 +207,24 @@ function Home() {
                     {/* Main container - stays as a rectangle with rounded corners */}
                     <section id="home" className="mt-4 sm:mt-6 mb-3 sm:mb-4 overflow-y-auto overflow-x-hidden no-scrollbar rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] bg-[#303133] shadow-[0_30px_100px_rgba(0,0,0,0.35)] ring-1 ring-white/5 w-full h-[calc(100vh-2rem)] sm:h-[calc(100vh-4rem)]">
                         {/* Hero Section - Fully Responsive */}
-                        <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-40 py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 2xl:py-56 overflow-hidden">
-                            <div className="flex flex-col lg:grid lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 lg:items-center">
+                        <div className="px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-40 py-3 xs:py-4 sm:py-5 md:py-6 lg:py-8 xl:py-12 2xl:py-56 overflow-hidden">
+                            <div className="flex flex-col lg:grid lg:grid-cols-[1.1fr_0.9fr] gap-4 xs:gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 lg:items-center">
 
                                 {/* Content Container */}
                                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-full lg:max-w-[560px] lg:pl-4 xl:pl-16 2xl:px-10 order-last lg:order-first">
 
                                     {/* Badge */}
-                                    <p className="animate-fade-up text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-[0.7rem] xl:text-[0.75rem] font-bold uppercase tracking-[0.3em] xs:tracking-[0.35em] sm:tracking-[0.4em] md:tracking-[0.45em] lg:tracking-[0.5em] xl:tracking-[0.60em] text-emerald-300/80 inline-block" style={getDelayStyle(0)}>
+                                    <p className="animate-fade-up text-[0.4rem] xs:text-[0.45rem] sm:text-[0.5rem] md:text-[0.55rem] lg:text-[0.65rem] xl:text-[0.7rem] 2xl:text-[0.75rem] font-bold uppercase tracking-[0.2em] xs:tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.35em] lg:tracking-[0.4em] xl:tracking-[0.5em] 2xl:tracking-[0.6em] text-emerald-300/80 inline-block" style={getDelayStyle(0)}>
                                         FRONTEND DEVELOPER / UI/UX DESIGNER
                                     </p>
 
                                     {/* Image - Mobile/Tablet: Between badge and heading */}
-                                    <div className="flex items-center justify-center lg:hidden mt-3 xs:mt-4 sm:mt-5 md:mt-6 mb-3 xs:mb-4 sm:mb-5 md:mb-6 animate-pop-in w-full" style={getDelayStyle(1.5)}>
+                                    <div className="flex items-center justify-center lg:hidden mt-2 xs:mt-3 sm:mt-4 md:mt-5 mb-2 xs:mb-3 sm:mb-4 md:mb-5 animate-pop-in w-full" style={getDelayStyle(1.5)}>
                                         <div
-                                            className="w-full max-w-[140px] xs:max-w-[160px] sm:max-w-[180px] md:max-w-[200px] rounded-[22px] xs:rounded-[24px] sm:rounded-[26px] md:rounded-[28px] border-[3px] xs:border-[4px] sm:border-[5px] border-[#1c1d1f] bg-[#1c1d1f] shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)] cursor-pointer"
+                                            className="w-full max-w-[120px] xs:max-w-[140px] sm:max-w-[160px] md:max-w-[180px] rounded-[18px] xs:rounded-[20px] sm:rounded-[22px] md:rounded-[24px] border-[2.5px] xs:border-[3px] sm:border-[4px] md:border-[5px] border-[#1c1d1f] bg-[#1c1d1f] shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] cursor-pointer"
                                             onClick={handleImageClick}
                                         >
-                                            <div className="overflow-hidden rounded-[18px] xs:rounded-[20px] sm:rounded-[22px] md:rounded-[24px] bg-[#15161a]">
+                                            <div className="overflow-hidden rounded-[14px] xs:rounded-[16px] sm:rounded-[18px] md:rounded-[20px] bg-[#15161a]">
                                                 <img
                                                     src={displayedImage}
                                                     alt="Mark Justin portrait"
@@ -237,33 +237,33 @@ function Home() {
                                     </div>
 
                                     {/* Heading */}
-                                    <h1 className="mt-2 xs:mt-3 sm:mt-4 md:mt-5 lg:mt-7 xl:mt-10 text-[clamp(1.6rem,5vw,2.4rem)] xs:text-[clamp(1.8rem,5.5vw,2.5rem)] sm:text-[clamp(2rem,5vw,2.8rem)] md:text-[clamp(2.2rem,4.8vw,3rem)] lg:text-[clamp(2.4rem,4.5vw,3.5rem)] xl:text-[clamp(2.6rem,4.5vw,3.6rem)] font-bold leading-[1.1] tracking-tight text-white w-full">
+                                    <h1 className="mt-1 xs:mt-2 sm:mt-3 md:mt-4 lg:mt-6 xl:mt-8 2xl:mt-10 text-[clamp(1.4rem,4.5vw,2rem)] xs:text-[clamp(1.6rem,5vw,2.2rem)] sm:text-[clamp(1.8rem,5.5vw,2.5rem)] md:text-[clamp(2rem,5vw,2.8rem)] lg:text-[clamp(2.2rem,4.8vw,3.2rem)] xl:text-[clamp(2.4rem,4.5vw,3.4rem)] 2xl:text-[clamp(2.6rem,4.5vw,3.6rem)] font-bold leading-[1.1] tracking-tight text-white w-full">
                                         <span className="inline-block animate-typing overflow-hidden whitespace-nowrap border-r-2 border-emerald-400/60 pr-1 max-w-full">
                                             Hey, I&apos;m Mark Justin!
                                         </span>
                                     </h1>
 
                                     {/* Description */}
-                                    <p className="animate-fade-up mt-2 xs:mt-3 sm:mt-4 md:mt-5 lg:mt-7 xl:mt-10 max-w-full lg:max-w-[45rem] text-[0.75rem] xs:text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] lg:text-[1rem] xl:text-[1.05rem] leading-[1.5] xs:leading-[1.55] sm:leading-[1.6] md:leading-[1.7] lg:leading-[1.8] tracking-wide text-white/60 px-2 xs:px-0" style={getDelayStyle(2)}>
-                                        I&apos;m a BSIT graduate crafting responsive web interfaces and continuously enhancing my UI/UX design and frontend development skills through real-world projects. Passionate about creating clean, user-friendly digital experiences with modern web technologies.
+                                    <p className="animate-fade-up mt-1.5 xs:mt-2.5 sm:mt-3.5 md:mt-4.5 lg:mt-6 xl:mt-8 2xl:mt-10 max-w-full lg:max-w-[45rem] text-[0.65rem] xs:text-[0.7rem] sm:text-[0.75rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] 2xl:text-[1.05rem] leading-[1.4] xs:leading-[1.45] sm:leading-[1.5] md:leading-[1.6] lg:leading-[1.7] xl:leading-[1.8] tracking-wide text-white/60 px-1 xs:px-0" style={getDelayStyle(2)}>
+                                        I&apos;m a BSIT graduate crafting responsive web interfaces and continuously enhancing my UI/UX design and frontend development skills through real-world projects. Passionate about creating clean, user-friendly digital experiences.
                                     </p>
 
                                     {/* Download CV Button - with pulse and hover effects */}
-                                    <div className="animate-fade-up mt-4 sm:mt-5 md:mt-6 lg:mt-8 xl:mt-10" style={getDelayStyle(2.5)}>
+                                    <div className="animate-fade-up mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10" style={getDelayStyle(2.5)}>
                                         <a
                                             href="/cv.pdf"
                                             download
-                                            className="group relative inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 text-[0.7rem] sm:text-xs md:text-sm font-medium text-white/70 hover:text-white border border-white/15 hover:border-white/30 rounded-lg transition-all duration-300 hover:bg-white/5 overflow-hidden"
+                                            className="group relative inline-flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 px-3 xs:px-4 sm:px-4.5 md:px-5 py-1.5 xs:py-2 sm:py-2.5 text-[0.6rem] xs:text-[0.65rem] sm:text-[0.7rem] md:text-[0.75rem] lg:text-xs xl:text-sm font-medium text-white/70 hover:text-white border border-white/15 hover:border-white/30 rounded-lg transition-all duration-300 hover:bg-white/5 overflow-hidden"
                                         >
                                             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent"></span>
 
-                                            <svg className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white/50 group-hover:text-white/80 transition-colors duration-300 group-hover:animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                            <svg className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-white/50 group-hover:text-white/80 transition-colors duration-300 group-hover:animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                                 <polyline points="7 10 12 15 17 10" />
                                                 <line x1="12" y1="15" x2="12" y2="3" />
                                             </svg>
                                             <span>Download CV</span>
-                                            <svg className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-white/30 group-hover:text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-[-10deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <svg className="w-2.5 xs:w-3 sm:w-3.5 h-2.5 xs:h-3 sm:h-3.5 text-white/30 group-hover:text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-[-10deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                 <path d="M5 12h14" />
                                                 <path d="m12 5 7 7-7 7" />
                                             </svg>
@@ -294,223 +294,223 @@ function Home() {
 
                         {/* Sections - all content stays inside the gray container */}
                         <div className="divide-y divide-white/8 border-t border-white/8">
-{/* STORY SECTION */}
-<FlowSection id="story" icon={SparkIcon} title="Where it all started" subtitle="Turning creativity into UI/UX and frontend development.">
-    <div className="mx-auto max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8">
-        {/* Section 1 - Image Left, Content Right */}
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
-            variants={fadeInUpVariants}
-            className="flex flex-col md:grid md:grid-cols-[0.8fr_1.2fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
-        >
-            <motion.div
-                variants={itemVariants}
-                className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group"
-            >
-                <img
-                    src={storyImage}
-                    alt="Creative Foundations - Where it all started"
-                    className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
-                    loading="lazy"
-                    decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
-                    <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
-                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
-                        <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 01</span>
-                    </div>
-                    <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">The foundation</p>
-                </div>
-            </motion.div>
+                            {/* STORY SECTION */}
+                            <FlowSection id="story" icon={SparkIcon} title="Where it all started" subtitle="Turning creativity into UI/UX and frontend development.">
+                                <div className="mx-auto max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8">
+                                    {/* Section 1 - Image Left, Content Right */}
+                                    <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={viewportConfig}
+                                        variants={fadeInUpVariants}
+                                        className="flex flex-col md:grid md:grid-cols-[0.8fr_1.2fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
+                                    >
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group"
+                                        >
+                                            <img
+                                                src={storyImage}
+                                                alt="Creative Foundations - Where it all started"
+                                                className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                                            <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
+                                                <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+                                                    <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
+                                                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 01</span>
+                                                </div>
+                                                <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">The foundation</p>
+                                            </div>
+                                        </motion.div>
 
-            <motion.div
-                variants={itemVariants}
-                className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full"
-            >
-                <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">01</span>
-                    <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Beginnings</span>
-                </div>
-                <motion.h3
-                    variants={itemVariants}
-                    className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
-                >
-                    Creative Foundations
-                </motion.h3>
-                <motion.p
-                    variants={itemVariants}
-                    className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
-                >
-                    My journey started with drawing and making creative projects.
-                    Inspired by others, I grew passionate about UI/UX design and
-                    frontend web development.
-                </motion.p>
-                <motion.div
-                    variants={itemVariants}
-                    className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
-                >
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Drawing</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">UI/UX</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Frontend</span>
-                </motion.div>
-            </motion.div>
-        </motion.div>
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full"
+                                        >
+                                            <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">01</span>
+                                                <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Beginnings</span>
+                                            </div>
+                                            <motion.h3
+                                                variants={itemVariants}
+                                                className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
+                                            >
+                                                Creative Foundations
+                                            </motion.h3>
+                                            <motion.p
+                                                variants={itemVariants}
+                                                className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
+                                            >
+                                                My journey started with drawing and making creative projects.
+                                                Inspired by others, I grew passionate about UI/UX design and
+                                                frontend web development.
+                                            </motion.p>
+                                            <motion.div
+                                                variants={itemVariants}
+                                                className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
+                                            >
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Drawing</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">UI/UX</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Frontend</span>
+                                            </motion.div>
+                                        </motion.div>
+                                    </motion.div>
 
-        {/* Timeline Connector - Minimal dot */}
-        <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1.0] }}
-            className="flex justify-center py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3"
-            style={{ transformOrigin: 'top' }}
-        >
-            <div className="w-px h-4 xs:h-5 sm:h-6 md:h-8 lg:h-12 bg-white/10" />
-        </motion.div>
+                                    {/* Timeline Connector - Minimal dot */}
+                                    <motion.div
+                                        initial={{ scaleY: 0 }}
+                                        whileInView={{ scaleY: 1 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                        transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1.0] }}
+                                        className="flex justify-center py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3"
+                                        style={{ transformOrigin: 'top' }}
+                                    >
+                                        <div className="w-px h-4 xs:h-5 sm:h-6 md:h-8 lg:h-12 bg-white/10" />
+                                    </motion.div>
 
-        {/* Section 2 - Image Right, Content Left */}
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
-            variants={fadeInUpVariants}
-            className="flex flex-col md:grid md:grid-cols-[1.2fr_0.8fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
-        >
-            <motion.div
-                variants={itemVariants}
-                className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full order-2 md:order-1"
-            >
-                <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">02</span>
-                    <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Growth</span>
-                </div>
-                <motion.h3
-                    variants={itemVariants}
-                    className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
-                >
-                    Skill Development
-                </motion.h3>
-                <motion.p
-                    variants={itemVariants}
-                    className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
-                >
-                    Through continuous learning and hands-on projects, I developed
-                    expertise in modern frontend technologies and design systems,
-                    bridging the gap between creativity and functionality.
-                </motion.p>
-                <motion.div
-                    variants={itemVariants}
-                    className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
-                >
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">React</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Design</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Prototyping</span>
-                </motion.div>
-            </motion.div>
+                                    {/* Section 2 - Image Right, Content Left */}
+                                    <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={viewportConfig}
+                                        variants={fadeInUpVariants}
+                                        className="flex flex-col md:grid md:grid-cols-[1.2fr_0.8fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
+                                    >
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full order-2 md:order-1"
+                                        >
+                                            <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">02</span>
+                                                <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Growth</span>
+                                            </div>
+                                            <motion.h3
+                                                variants={itemVariants}
+                                                className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
+                                            >
+                                                Skill Development
+                                            </motion.h3>
+                                            <motion.p
+                                                variants={itemVariants}
+                                                className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
+                                            >
+                                                Through continuous learning and hands-on projects, I developed
+                                                expertise in modern frontend technologies and design systems,
+                                                bridging the gap between creativity and functionality.
+                                            </motion.p>
+                                            <motion.div
+                                                variants={itemVariants}
+                                                className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
+                                            >
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">React</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Design</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Prototyping</span>
+                                            </motion.div>
+                                        </motion.div>
 
-            <motion.div
-                variants={itemVariants}
-                className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group order-1 md:order-2"
-            >
-                <img
-                    src={growthImage}
-                    alt="Skill Development - Building expertise"
-                    className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
-                    loading="lazy"
-                    decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
-                    <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
-                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
-                        <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 02</span>
-                    </div>
-                    <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">Building expertise</p>
-                </div>
-            </motion.div>
-        </motion.div>
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group order-1 md:order-2"
+                                        >
+                                            <img
+                                                src={growthImage}
+                                                alt="Skill Development - Building expertise"
+                                                className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                                            <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
+                                                <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+                                                    <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
+                                                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 02</span>
+                                                </div>
+                                                <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">Building expertise</p>
+                                            </div>
+                                        </motion.div>
+                                    </motion.div>
 
-        {/* Timeline Connector */}
-        <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1.0], delay: 0.1 }}
-            className="flex justify-center py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3"
-            style={{ transformOrigin: 'top' }}
-        >
-            <div className="w-px h-4 xs:h-5 sm:h-6 md:h-8 lg:h-12 bg-white/10" />
-        </motion.div>
+                                    {/* Timeline Connector */}
+                                    <motion.div
+                                        initial={{ scaleY: 0 }}
+                                        whileInView={{ scaleY: 1 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                        transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1.0], delay: 0.1 }}
+                                        className="flex justify-center py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3"
+                                        style={{ transformOrigin: 'top' }}
+                                    >
+                                        <div className="w-px h-4 xs:h-5 sm:h-6 md:h-8 lg:h-12 bg-white/10" />
+                                    </motion.div>
 
-        {/* Section 3 - Image Left, Content Right */}
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
-            variants={fadeInUpVariants}
-            className="flex flex-col md:grid md:grid-cols-[0.8fr_1.2fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
-        >
-            <motion.div
-                variants={itemVariants}
-                className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group"
-            >
-                <img
-                    src={excellenceImage}
-                    alt="Creative Excellence - Current focus"
-                    className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
-                    loading="lazy"
-                    decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
-                    <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
-                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
-                        <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 03</span>
-                    </div>
-                    <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">Current focus</p>
-                </div>
-            </motion.div>
+                                    {/* Section 3 - Image Left, Content Right */}
+                                    <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={viewportConfig}
+                                        variants={fadeInUpVariants}
+                                        className="flex flex-col md:grid md:grid-cols-[0.8fr_1.2fr] gap-3 xs:gap-5 sm:gap-8 md:gap-10 lg:gap-12 items-center py-2.5 xs:py-4 sm:py-5 md:py-6 lg:py-8"
+                                    >
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] max-w-[240px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-full w-full shadow-lg shadow-black/20 group"
+                                        >
+                                            <img
+                                                src={excellenceImage}
+                                                alt="Creative Excellence - Current focus"
+                                                className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105 will-change-transform"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                                            <div className="absolute bottom-0 left-0 right-0 p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6">
+                                                <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+                                                    <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-green-400/60 animate-pulse" />
+                                                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] lg:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/80">Phase 03</span>
+                                                </div>
+                                                <p className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-xs font-light text-white/70 mt-0.5 xs:mt-1">Current focus</p>
+                                            </div>
+                                        </motion.div>
 
-            <motion.div
-                variants={itemVariants}
-                className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full"
-            >
-                <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">03</span>
-                    <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
-                    <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Now</span>
-                </div>
-                <motion.h3
-                    variants={itemVariants}
-                    className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
-                >
-                    Creative Excellence
-                </motion.h3>
-                <motion.p
-                    variants={itemVariants}
-                    className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
-                >
-                    Today, I combine artistic vision with technical precision to
-                    create immersive digital experiences that are both beautiful
-                    and functional, always pushing the boundaries of what's possible.
-                </motion.p>
-                <motion.div
-                    variants={itemVariants}
-                    className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
-                >
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Animation</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Performance</span>
-                    <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">UI/UX</span>
-                </motion.div>
-            </motion.div>
-        </motion.div>
-    </div>
-</FlowSection>
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className="space-y-1.5 xs:space-y-2.5 sm:space-y-3.5 md:space-y-4.5 lg:space-y-5 text-left w-full"
+                                        >
+                                            <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">03</span>
+                                                <div className="flex-1 max-w-6 xs:max-w-8 sm:max-w-10 md:max-w-12 h-px bg-white/10" />
+                                                <span className="text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-white/30">Now</span>
+                                            </div>
+                                            <motion.h3
+                                                variants={itemVariants}
+                                                className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-tight text-white leading-tight"
+                                            >
+                                                Creative Excellence
+                                            </motion.h3>
+                                            <motion.p
+                                                variants={itemVariants}
+                                                className="text-[0.7rem] xs:text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] lg:text-base font-light text-white/60 leading-relaxed"
+                                            >
+                                                Today, I combine artistic vision with technical precision to
+                                                create immersive digital experiences that are both beautiful
+                                                and functional, always pushing the boundaries of what's possible.
+                                            </motion.p>
+                                            <motion.div
+                                                variants={itemVariants}
+                                                className="flex flex-wrap gap-0.5 xs:gap-1 sm:gap-1.5 md:gap-2 pt-0.5 xs:pt-1"
+                                            >
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Animation</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">Performance</span>
+                                                <span className="text-[0.3rem] xs:text-[0.35rem] sm:text-[0.4rem] md:text-[0.45rem] font-medium uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] md:tracking-[0.2em] text-white/40 bg-white/5 px-1.5 xs:px-2 sm:px-2.5 md:px-3 py-0.5 xs:py-1 rounded-full border border-white/5 hover:border-white/20 transition-all duration-300">UI/UX</span>
+                                            </motion.div>
+                                        </motion.div>
+                                    </motion.div>
+                                </div>
+                            </FlowSection>
 
                             {/* PROJECTS SECTION */}
                             <FlowSection
