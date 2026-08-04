@@ -15,6 +15,18 @@ import bulsuSnapImage from '../assets/images/p4.png'
 import { useNavigate } from 'react-router-dom';
 // Add this import at the top of your Home.jsx file
 import cvPDF from '../assets/images/ABARE-MARK-JUSTIN-V-CV.pdf';
+const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+        opacity: 1, 
+        y: 0,
+        transition: { 
+            duration: 0.8, 
+            ease: [0.25, 0.1, 0.25, 1.0] 
+        }
+    }
+}
+
 const fadeInUpVariants = {
     hidden: {
         opacity: 0,
@@ -871,7 +883,7 @@ function Home() {
                                 title="Experience"
                                 subtitle="A professional training ground for honing frontend development skills."
                             >
-                                <div className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 max-w-5xl mx-auto px-3 xs:px-4 sm:px-5 md:px-6">
+                                <div className="space-y-4 xs:space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 max-w-5xl mx-auto px-3 xs:px-4 sm:px-5 md:px-6">
                                     {experiences.map((item, index) => (
                                         <motion.article
                                             key={item.title}
@@ -890,8 +902,8 @@ function Home() {
                                             className="group bg-white/[0.02] rounded-lg xs:rounded-xl sm:rounded-2xl border border-white/5 p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 cursor-pointer"
                                             onClick={() => navigate('/experience')}
                                         >
-                                            <div className="flex flex-col md:flex-row lg:flex-row items-start gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8">
-                                                {/* Image - Responsive sizing */}
+                                            <div className="flex flex-col md:flex-row lg:flex-row items-start gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                                                {/* Image - More elegant mobile sizing */}
                                                 <motion.div
                                                     initial={{ opacity: 0, scale: 0.95 }}
                                                     whileInView={{
@@ -904,7 +916,7 @@ function Home() {
                                                         }
                                                     }}
                                                     viewport={{ once: true, amount: 0.1 }}
-                                                    className="flex-shrink-0 w-16 xs:w-18 sm:w-20 md:w-24 lg:w-28 xl:w-32 h-16 xs:h-18 sm:h-20 md:h-24 lg:h-28 xl:h-32 rounded-lg xs:rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 group-hover:border-white/20"
+                                                    className="flex-shrink-0 w-12 xs:w-14 sm:w-16 md:w-20 lg:w-24 xl:w-28 h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 rounded-lg xs:rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 group-hover:border-white/20"
                                                 >
                                                     {item.image ? (
                                                         <img
@@ -916,12 +928,12 @@ function Home() {
                                                         />
                                                     ) : (
                                                         <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
-                                                            <BriefcaseIcon className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-white/20 transition-all duration-300 group-hover:text-white/30" />
+                                                            <BriefaseIcon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white/20 transition-all duration-300 group-hover:text-white/30" />
                                                         </div>
                                                     )}
                                                 </motion.div>
 
-                                                {/* Content - Responsive text sizing */}
+                                                {/* Content - Refined mobile typography */}
                                                 <motion.div
                                                     initial={{ opacity: 0, x: -8 }}
                                                     whileInView={{
@@ -934,24 +946,24 @@ function Home() {
                                                         }
                                                     }}
                                                     viewport={{ once: true, amount: 0.1 }}
-                                                    className="flex-1 min-w-0 space-y-2 xs:space-y-2.5 sm:space-y-3"
+                                                    className="flex-1 min-w-0 space-y-1.5 xs:space-y-2 sm:space-y-2.5 md:space-y-3"
                                                 >
-                                                    <div className="flex flex-wrap items-center gap-x-2 xs:gap-x-3 sm:gap-x-4 md:gap-x-5 lg:gap-x-6 gap-y-1.5 xs:gap-y-2">
-                                                        <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-tight text-white">
+                                                    <div className="flex flex-wrap items-center gap-x-1.5 xs:gap-x-2 sm:gap-x-3 md:gap-x-4 lg:gap-x-5 gap-y-1 xs:gap-y-1.5 sm:gap-y-2">
+                                                        <h3 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight text-white">
                                                             {item.role}
                                                         </h3>
-                                                        <span className="text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-[0.65rem] font-medium uppercase tracking-[0.2em] xs:tracking-[0.22em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] text-white/50 bg-white/[0.04] px-3 xs:px-3.5 sm:px-4 md:px-5 py-1 xs:py-1.5 sm:py-2 rounded-full border border-white/5 transition-all duration-300 group-hover:bg-white/[0.06] group-hover:border-white/15 group-hover:text-white/70">
+                                                        <span className="text-[0.4rem] xs:text-[0.45rem] sm:text-[0.5rem] md:text-[0.55rem] lg:text-[0.6rem] xl:text-[0.65rem] font-medium uppercase tracking-[0.15em] xs:tracking-[0.18em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] text-white bg-emerald-500 px-2 xs:px-2.5 sm:px-3 md:px-4 py-0.5 xs:py-1 sm:py-1.5 md:py-2 rounded-full border border-emerald-400 transition-all duration-300 group-hover:bg-emerald-400 group-hover:border-emerald-300">
                                                             {item.title}
                                                         </span>
                                                     </div>
 
-                                                    <p className="text-xs xs:text-sm sm:text-base lg:text-lg font-light text-white/60 leading-relaxed max-w-2xl transition-all duration-300 group-hover:text-white/70">
+                                                    <p className="text-[0.65rem] xs:text-xs sm:text-sm md:text-base lg:text-lg font-light text-white/60 leading-relaxed max-w-2xl transition-all duration-300 group-hover:text-white/70">
                                                         {item.summary}
                                                     </p>
 
-                                                    {/* Duration - Visible on mobile, hidden on desktop (moved to right column) */}
+                                                    {/* Duration - Mobile with refined styling */}
                                                     <div className="md:hidden mt-1 xs:mt-1.5 sm:mt-2">
-                                                        <span className="text-xs xs:text-sm sm:text-base font-medium text-white/40 tracking-wide">
+                                                        <span className="text-[0.5rem] xs:text-xs sm:text-sm font-light text-white/30 tracking-wider">
                                                             {item.duration}
                                                         </span>
                                                     </div>
@@ -970,15 +982,15 @@ function Home() {
                                                         }
                                                     }}
                                                     viewport={{ once: true, amount: 0.1 }}
-                                                    className="flex-shrink-0 self-center ml-2 md:ml-3 lg:ml-4 flex flex-col items-end gap-2"
+                                                    className="flex-shrink-0 self-center ml-1 xs:ml-2 md:ml-3 lg:ml-4 flex flex-col items-end gap-2"
                                                 >
                                                     {/* Duration - Desktop only */}
-                                                    <span className="hidden md:block text-sm md:text-base lg:text-lg font-medium text-white/40 tracking-wide whitespace-nowrap">
+                                                    <span className="hidden md:block text-xs sm:text-sm md:text-base lg:text-lg font-light text-white/40 tracking-wide whitespace-nowrap">
                                                         {item.duration}
                                                     </span>
 
-                                                    <div className="w-8 xs:w-9 sm:w-10 md:w-11 lg:w-12 h-8 xs:h-9 sm:h-10 md:h-11 lg:h-12 rounded-full border border-white/20 bg-white/[0.03] flex items-center justify-center transition-all duration-500 group-hover:border-white/40 group-hover:bg-white/[0.08] group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-white/5">
-                                                        <svg className="w-4 xs:w-4.5 sm:w-5 md:w-5.5 lg:w-6 h-4 xs:h-4.5 sm:h-5 md:h-5.5 lg:h-6 text-white/30 transition-all duration-500 group-hover:text-white/60 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div className="w-7 xs:w-8 sm:w-9 md:w-10 lg:w-11 xl:w-12 h-7 xs:h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 rounded-full border border-white/20 bg-white/[0.03] flex items-center justify-center transition-all duration-500 group-hover:border-white/40 group-hover:bg-white/[0.08] group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-white/5">
+                                                        <svg className="w-3 xs:w-3.5 sm:w-4 md:w-4.5 lg:w-5 xl:w-5.5 h-3 xs:h-3.5 sm:h-4 md:h-4.5 lg:h-5 xl:h-5.5 text-white/30 transition-all duration-500 group-hover:text-white/60 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                                         </svg>
                                                     </div>
@@ -998,13 +1010,12 @@ function Home() {
                                                     }
                                                 }}
                                                 viewport={{ once: true, amount: 0.1 }}
-                                                className="mt-4 xs:mt-5 sm:mt-6 md:mt-7 lg:mt-8 h-px bg-gradient-to-r from-white/5 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                                                className="mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 h-px bg-gradient-to-r from-white/5 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                                             />
                                         </motion.article>
                                     ))}
                                 </div>
                             </FlowSection>
-
                             {/* CONTACTS SECTION */}
                             <FlowSection
                                 id="contacts"
@@ -1096,10 +1107,10 @@ function Home() {
                                             >
                                                 <button
                                                     onClick={() => navigate('/contacts')}
-                                                    className="group inline-flex items-center gap-3 text-sm sm:text-base font-medium text-white/80 bg-white/5 border border-white/10 rounded-full px-8 sm:px-10 py-3.5 sm:py-4 transition-all duration-500 hover:bg-white hover:text-[#0a0a0a] hover:border-white hover:shadow-2xl hover:shadow-white/5"
+                                                    className="group inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base font-medium text-white/80 bg-white/5 border border-white/10 rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-3.5 lg:py-4 transition-all duration-500 hover:bg-white hover:text-[#0a0a0a] hover:border-white hover:shadow-2xl hover:shadow-white/5"
                                                 >
                                                     <span>Get in touch</span>
-                                                    <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                    <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 transition-transform duration-500 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                                     </svg>
                                                 </button>
@@ -1120,10 +1131,19 @@ function Home() {
 
 function FlowSection({ id, icon: Icon, title, subtitle, action, children }) {
     return (
-        <section id={id} className="animate-section-reveal px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-65 py-4 sm:py-6 lg:py-8 xl:py-30">
+        <motion.section 
+            id={id} 
+            className="px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-65 py-4 sm:py-6 lg:py-8 xl:py-30"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={fadeUp}
+        >
             <SectionTitle icon={Icon} title={title} subtitle={subtitle} action={action} />
-            <div className="mt-6 sm:mt-8 lg:mt-10 mb-3 sm:mb-4 lg:mb-20">{children}</div>
-        </section>
+            <div className="mt-6 sm:mt-8 lg:mt-10 mb-3 sm:mb-4 lg:mb-20">
+                {children}
+            </div>
+        </motion.section>
     )
 }
 
@@ -1162,9 +1182,7 @@ function SectionTitle({ icon: Icon, title, subtitle, action }) {
     );
 }
 
-// ============================================
-// HELPER COMPONENTS (UNCHANGED)
-// ============================================
+
 
 function Field({ label, placeholder }) {
     return (
