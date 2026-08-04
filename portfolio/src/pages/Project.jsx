@@ -212,7 +212,7 @@ const projectCards = [
     },
     {
         title: 'BulsuSnap',
-        category: 'UNIVERSITY SOCIAL MEDIA APP',
+        category: 'UNIVERSITY SOCIAL APP',
         summary: 'Campus social platform for sharing pictures and connecting.',
         image: bulsuSnapImage,
         image1: bulsuSnapImage,
@@ -296,58 +296,89 @@ function Project() {
 
             <main className="lg:pl-[244px]">
                 <div className="mx-auto max-w-[1320px] px-4 py-2 sm:px-6 lg:px-8 lg:py-3">
-                    <section id="home" className="mt-4 sm:mt-6 mb-3 sm:mb-4 overflow-y-auto overflow-x-hidden no-scrollbar rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] bg-[#303133] shadow-[0_30px_100px_rgba(0,0,0,0.35)] ring-1 ring-white/5 w-full h-[calc(100vh-2rem)] sm:h-[calc(100vh-4rem)]">                   {/* Hero Section */}
-
-                        <div className="px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 xl:px-14 xl:py-16 2xl:px-35 2xl:py-20">
-                            {/* Projects Header - Centered */}
-                            <div className="flex flex-col items-start w-full 2xl:px-40">
-                                {/* Icon and Title Row - Left Aligned */}
-                                <div className="flex items-center gap-3 xs:gap-4 sm:gap-5 animate-fade-up" style={getDelayStyle(0)}>
-                                    <div className="flex-shrink-0">
-                                        <div className="h-12 w-12 xs:h-13 xs:w-13 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-18 lg:w-18 xl:h-20 xl:w-20 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-2.5 xs:p-3 ring-2 ring-white/20 shadow-lg flex items-center justify-center backdrop-blur-sm">
-                                            <FolderIcon className="h-6 w-6 xs:h-6.5 xs:w-6.5 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 xl:h-11 xl:w-11 text-white/90" strokeWidth="2" />
+                    <section id="home" className="mt-4 sm:mt-6 mb-3 sm:mb-4 overflow-y-auto overflow-x-hidden no-scrollbar rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] bg-[#303133] shadow-[0_30px_100px_rgba(0,0,0,0.35)] ring-1 ring-white/5 w-full h-[calc(100vh-2rem)] sm:h-[calc(100vh-4rem)]">
+                        {/* Hero Section */}
+                        <div className="flex flex-col min-h-full">
+                            <div className="px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 xl:px-14 xl:py-16 2xl:px-35 2xl:py-20 flex-1">
+                                {/* Projects Header - Centered */}
+                                <div className="flex flex-col items-start w-full 2xl:px-40">
+                                    {/* Icon and Title Row - Left Aligned */}
+                                    <div className="flex items-center gap-3 xs:gap-4 sm:gap-5 animate-fade-up" style={getDelayStyle(0)}>
+                                        <div className="flex-shrink-0">
+                                            <div className="h-12 w-12 xs:h-13 xs:w-13 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-18 lg:w-18 xl:h-20 xl:w-20 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-2.5 xs:p-3 ring-2 ring-white/20 shadow-lg flex items-center justify-center backdrop-blur-sm">
+                                                <FolderIcon className="h-6 w-6 xs:h-6.5 xs:w-6.5 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 xl:h-11 xl:w-11 text-white/90" strokeWidth="2" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col text-left">
+                                            <p className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+                                                Projects
+                                            </p>
+                                            <p className="text-[0.55rem] xs:text-xs sm:text-sm text-white/40 tracking-wider">
+                                                Portfolio Showcase
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col text-left">
-                                        <p className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
-                                            Projects
-                                        </p>
-                                        <p className="text-[0.55rem] xs:text-xs sm:text-sm text-white/40 tracking-wider">
-                                            Portfolio Showcase
-                                        </p>
+
+                                    {/* Two-line Introduction - Left Aligned */}
+                                    <div className="animate-fade-up mt-8 xs:mt-9 sm:mt-10 md:mt-12 text-left" style={getDelayStyle(1)}>
+                                        <h1 className="text-[clamp(0.9rem,3vw,1.5rem)] xs:text-[clamp(1rem,3.2vw,1.6rem)] sm:text-[clamp(1.1rem,3.4vw,1.7rem)] md:text-[clamp(1.2rem,3.6vw,1.8rem)] lg:text-[clamp(1.4rem,4vw,2rem)] xl:text-[clamp(1.6rem,4.2vw,2.2rem)] 2xl:text-[clamp(1.8rem,4.5vw,2.4rem)] font-semi-bold leading-[1.2] tracking-tight text-white/80 max-w-2xl">
+                                            A curated collection
+                                        </h1>
+                                        <h1 className="text-[clamp(0.9rem,3vw,1.5rem)] xs:text-[clamp(1rem,3.2vw,1.6rem)] sm:text-[clamp(1.1rem,3.4vw,1.7rem)] md:text-[clamp(1.2rem,3.6vw,1.8rem)] lg:text-[clamp(1.4rem,4vw,2rem)] xl:text-[clamp(1.6rem,4.2vw,2.2rem)] 2xl:text-[clamp(1.8rem,4.5vw,2.4rem)] font-semi-bold leading-[1.2] tracking-tight text-white/80 max-w-2xl">
+                                            showcasing all my work and projects.
+                                        </h1>
                                     </div>
+
+                                    {/* Decorative line - Left Aligned */}
+                                    <div className="animate-fade-up mt-4 xs:mt-5 sm:mt-6 w-16 xs:w-18 sm:w-20 h-0.5 bg-gradient-to-r from-white/40 to-transparent rounded-full" style={getDelayStyle(3)}></div>
                                 </div>
 
-                                {/* Two-line Introduction - Left Aligned */}
-                                <div className="animate-fade-up mt-8 xs:mt-9 sm:mt-10 md:mt-12 text-left" style={getDelayStyle(1)}>
-                                    <h1 className="text-[clamp(0.9rem,3vw,1.5rem)] xs:text-[clamp(1rem,3.2vw,1.6rem)] sm:text-[clamp(1.1rem,3.4vw,1.7rem)] md:text-[clamp(1.2rem,3.6vw,1.8rem)] lg:text-[clamp(1.4rem,4vw,2rem)] xl:text-[clamp(1.6rem,4.2vw,2.2rem)] 2xl:text-[clamp(1.8rem,4.5vw,2.4rem)] font-semi-bold leading-[1.2] tracking-tight text-white/80 max-w-2xl">
-                                        A curated collection
-                                    </h1>
-                                    <h1 className="text-[clamp(0.9rem,3vw,1.5rem)] xs:text-[clamp(1rem,3.2vw,1.6rem)] sm:text-[clamp(1.1rem,3.4vw,1.7rem)] md:text-[clamp(1.2rem,3.6vw,1.8rem)] lg:text-[clamp(1.4rem,4vw,2rem)] xl:text-[clamp(1.6rem,4.2vw,2.2rem)] 2xl:text-[clamp(1.8rem,4.5vw,2.4rem)] font-semi-bold leading-[1.2] tracking-tight text-white/80 max-w-2xl">
-                                        showcasing all my work and projects.
-                                    </h1>
-                                </div>
+                                {/* Project Cards */}
+                                <section id="projects" className="mt-12 sm:mt-16 lg:mt-20 2xl:px-40">
+                                    {/* Mobile: 2-column grid */}
+                                    <div className="grid grid-cols-2 gap-3 xs:gap-4 px-3 xs:px-4 sm:hidden">
+                                        {projectCards.slice(0, 4).map((project, index) => (
+                                            <div key={project.title}>
+                                                <ProjectCard
+                                                    project={project}
+                                                    index={index}
+                                                    onViewProject={() => openModal(project)}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
 
-                                {/* Decorative line - Left Aligned */}
-                                <div className="animate-fade-up mt-4 xs:mt-5 sm:mt-6 w-16 xs:w-18 sm:w-20 h-0.5 bg-gradient-to-r from-white/40 to-transparent rounded-full" style={getDelayStyle(3)}></div>
+                                    {/* Tablet: 2-column grid */}
+                                    <div className="hidden sm:grid md:hidden grid-cols-2 gap-4 md:gap-5 px-3 xs:px-4 sm:px-0">
+                                        {projectCards.map((project, index) => (
+                                            <div key={project.title}>
+                                                <ProjectCard
+                                                    project={project}
+                                                    index={index}
+                                                    onViewProject={() => openModal(project)}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Desktop: 3-column grid */}
+                                    <div className="hidden md:grid lg:grid-cols-3 gap-5 lg:gap-8 px-3 xs:px-4 sm:px-0">
+                                        {projectCards.map((project, index) => (
+                                            <div key={project.title}>
+                                                <ProjectCard
+                                                    project={project}
+                                                    index={index}
+                                                    onViewProject={() => openModal(project)}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
                             </div>
 
-                            {/* Project Cards */}
-                            <section id="projects" className="mt-12 sm:mt-16 lg:mt-20 2xl:px-40">
-                                <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
-                                    {projectCards.map((project, index) => (
-                                        <ProjectCard
-                                            key={project.title}
-                                            project={project}
-                                            index={index}
-                                            onViewProject={() => openModal(project)}
-                                        />
-                                    ))}
-                                </div>
-                            </section>
-
+                            {/* Footer pushed to bottom */}
+                            <Footer />
                         </div>
-                        <Footer />
                     </section>
 
                 </div>
@@ -380,7 +411,7 @@ function Project() {
 function ProjectCard({ project, index, onViewProject }) {
     return (
         <article
-            className="group overflow-hidden rounded-xl xs:rounded-2xl border border-white/8 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-white/15 cursor-pointer"
+            className="group overflow-hidden rounded-xl xs:rounded-2xl border border-white/8 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-white/15 cursor-pointer w-full"
             style={getDelayStyle(index, 0.14, 0.08)}
             onClick={onViewProject}
         >
@@ -398,29 +429,29 @@ function ProjectCard({ project, index, onViewProject }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/65 to-transparent" />
 
                 {/* Content - Responsive padding */}
-                <div className="absolute inset-x-0 bottom-0 p-3 xs:p-3.5 sm:p-4 md:p-5 lg:p-6">
+                <div className="absolute inset-x-0 bottom-0 p-2 xs:p-2.5 sm:p-4 md:p-5 lg:p-6">
                     {/* Category - Responsive sizing */}
-                    <div className="mb-2 xs:mb-2.5 sm:mb-3">
-                        <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-2 xs:px-2.5 sm:px-3 py-0.5 xs:py-0.5 sm:py-1 text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] md:text-[0.5rem] lg:text-[0.55rem] font-medium uppercase tracking-[0.2em] xs:tracking-[0.22em] sm:tracking-[0.25em] text-white/80 backdrop-blur-md">
+                    <div className="mb-1 xs:mb-1.5 sm:mb-3">
+                        <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-1.5 xs:px-2 sm:px-3 py-0.5 xs:py-0.5 sm:py-1 text-[0.3rem] xs:text-[0.35rem] sm:text-[0.45rem] md:text-[0.5rem] lg:text-[0.55rem] font-medium uppercase tracking-[0.18em] xs:tracking-[0.2em] sm:tracking-[0.25em] text-white/80 backdrop-blur-md">
                             {project.category}
                         </span>
                     </div>
 
                     {/* Title - Responsive text */}
-                    <h3 className="font-light tracking-tight text-white leading-tight text-base xs:text-lg sm:text-xl md:text-2xl">
+                    <h3 className="font-light tracking-tight text-white leading-tight text-[0.65rem] xs:text-xs sm:text-xl md:text-2xl line-clamp-2">
                         {project.title}
                     </h3>
 
                     {/* Description - Responsive text */}
-                    <p className="mt-1 xs:mt-1.5 text-[0.7rem] xs:text-[0.75rem] sm:text-xs md:text-sm leading-relaxed text-white/50 max-w-[90%] xs:max-w-full">
+                    <p className="mt-0.5 xs:mt-1 sm:mt-1.5 text-[0.45rem] xs:text-[0.55rem] sm:text-xs md:text-sm leading-relaxed text-white/50 line-clamp-2 xs:line-clamp-2 sm:line-clamp-none">
                         {project.summary}
                     </p>
 
                     {/* View Project - Responsive sizing */}
-                    <div className="mt-2 xs:mt-2.5 sm:mt-3">
-                        <button className="group/btn inline-flex items-center gap-1 xs:gap-1.5 sm:gap-2 text-[0.55rem] xs:text-[0.6rem] sm:text-xs md:text-sm font-medium text-white/50 hover:text-white/80 transition-colors duration-300">
-                            <span className="tracking-wide text-[0.45rem] xs:text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] uppercase">View Project</span>
-                            <ArrowIcon className="h-2.5 w-2.5 xs:h-3 xs:w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    <div className="mt-1 xs:mt-1.5 sm:mt-3">
+                        <button className="group/btn inline-flex items-center gap-1 xs:gap-1.5 sm:gap-2 text-[0.4rem] xs:text-[0.45rem] sm:text-xs md:text-sm font-medium text-white/50 hover:text-white/80 transition-colors duration-300">
+                            <span className="tracking-wide text-[0.3rem] xs:text-[0.35rem] sm:text-[0.55rem] md:text-[0.6rem] uppercase">View Project</span>
+                            <ArrowIcon className="h-1.5 w-1.5 xs:h-2 xs:w-2 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                         </button>
                     </div>
                 </div>
