@@ -12,7 +12,7 @@ import excellenceImage from '../assets/images/ph3.jpeg';
 import fireQuakeImage from '../assets/images/fqe-logo.jpeg'
 import nestCafeImage from '../assets/images/p2.jpeg'
 import bulsuSnapImage from '../assets/images/p4.png'
-
+import { useNavigate } from 'react-router-dom';
 
 const fadeInUpVariants = {
     hidden: {
@@ -190,9 +190,10 @@ function HomeIcon({ className }) {
 }
 
 function Home() {
+    const navigate = useNavigate();
     const [isClicked, setIsClicked] = useState(false)
     const displayedImage = isClicked ? homepicHover : homepic
-
+    
     const handleImageClick = useCallback(() => {
         setIsClicked(prev => !prev)
     }, [])
@@ -547,7 +548,7 @@ function Home() {
                                                 index % 3 === 1 ? 'mb-2 xs:mb-2.5 sm:mb-3 md:mb-3.5 lg:mb-4' :
                                                     'mb-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12'
                                                 }`}
-                                            onClick={() => window.location.assign('/projects')}
+                                            onClick={() => navigate('/projects')}
                                         >
                                             <div className="relative overflow-hidden rounded-lg xs:rounded-xl sm:rounded-2xl aspect-[4/5]">
                                                 {/* Image with optimized reveal */}
@@ -717,7 +718,7 @@ function Home() {
                                             }}
                                             viewport={{ once: true, amount: 0.1, margin: "-20px" }}
                                             className="group bg-white/[0.02] rounded-lg xs:rounded-xl sm:rounded-2xl border border-white/5 p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 cursor-pointer"
-                                            onClick={() => window.location.assign('/experience')}
+                                            onClick={() => navigate('/experience')}
                                         >
                                             <div className="flex flex-col md:flex-row lg:flex-row items-start gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8">
                                                 {/* Image - Responsive sizing */}
@@ -924,7 +925,7 @@ function Home() {
                                                 className="mt-10 sm:mt-12"
                                             >
                                                 <button
-                                                    onClick={() => window.location.assign('/contacts')}
+                                                    onClick={() => navigate('/contacts')}
                                                     className="group inline-flex items-center gap-3 text-sm sm:text-base font-medium text-white/80 bg-white/5 border border-white/10 rounded-full px-8 sm:px-10 py-3.5 sm:py-4 transition-all duration-500 hover:bg-white hover:text-[#0a0a0a] hover:border-white hover:shadow-2xl hover:shadow-white/5"
                                                 >
                                                     <span>Get in touch</span>
