@@ -231,7 +231,7 @@ const projectCards = [
         details: {
             type: 'Mobile App',
             project: 'Group Project',
-            platform: 'iOS & Android',
+            platform: 'Android',
             duration: '1 Month',
             status: 'In Development'
         },
