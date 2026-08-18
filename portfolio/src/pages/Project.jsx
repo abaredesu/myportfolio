@@ -408,10 +408,12 @@ function Project() {
     )
 }
 
+// ProjectCard.jsx
+
 function ProjectCard({ project, index, onViewProject }) {
     return (
         <article
-            className="group overflow-hidden rounded-xl xs:rounded-2xl border border-white/8 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-white/15 cursor-pointer w-full"
+            className="group overflow-hidden rounded-xl xs:rounded-2xl border border-white/8 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-white/15 cursor-pointer w-full project-card"
             style={getDelayStyle(index, 0.14, 0.08)}
             onClick={onViewProject}
         >
