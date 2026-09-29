@@ -14,7 +14,7 @@ import nestCafeImage from '../assets/images/p2.jpeg'
 import bulsuSnapImage from '../assets/images/p4.png'
 import { useNavigate } from 'react-router-dom';
 // Add this import at the top of your Home.jsx file
-import cvPDF from '../assets/images/ABARE-MARK-JUSTIN-V-CV.pdf';
+import cvPDF from '../assets/images/ABARE-MARK-JUSTIN-V-CV1.pdf';
 const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
